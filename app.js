@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 }
 
-class Background extends Component {
+class Background extends React.Component {
   constructor(){
     super();
     this.props = {};
