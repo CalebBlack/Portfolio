@@ -41,7 +41,7 @@ class Background extends React.Component {
   }
 }
 
-class Eye extends Component {
+class Eye extends React.Component {
   constructor(){
     super();
     this.props = {};
