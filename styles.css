@@ -173,7 +173,8 @@ p {
 div.wiggle, div.jiggle, div.yflip, div.zspin {
   display: inline-block;
 }
-div.wiggle:hover {
+div.wiggle:
+{
   animation: wiggle 0.2s linear;
 }
 div.jiggle:hover {
@@ -210,10 +211,10 @@ div.zspin:hover {
   right: 40%;
   transition: opacity 0.3s linear, right 1s ease, top 1s ease !important;
 }
-.gitdisplay:hover .eye {
+/* .gitdisplay:hover .eye {
   opacity: 1;
   transition: opacity 0.05s linear;
-}
+} */
 .githublink {
   color: white;
   text-decoration: none;
