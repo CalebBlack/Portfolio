@@ -40,7 +40,7 @@ class Background extends React.Component {
     return (<div className='backgroundHolder'><img id='background' src={this.props.source || ''}/></div>)
   }
 }
-class Eye extends Component {
+class Eye extends React.Component {
   constructor(){
     super();
     this.props = {};
