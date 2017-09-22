@@ -4,7 +4,7 @@ class App extends React.Component {
       <div id="app">
         <Background source='https://i.imgur.com/9eDEcN5.jpg'/>
         <div className='display gitdisplay'>
-          <div className='eyes'><div className='left eye'/><div className='right eye'/></div>
+          <div className='eyes'><Eye radius={5} side='left'/><Eye radius={5} side='right'/></div>
           <a href='https://www.github.com/CalebBlack/'><img className='github' src='https://i.imgur.com/9HLZFMT.png'/></a>
         </div>
         <h1 className='title'>Dream Developing</h1>
@@ -38,6 +38,36 @@ class Background extends React.Component {
   }
   render(){
     return (<div className='backgroundHolder'><img id='background' src={this.props.source || ''}/></div>)
+  }
+}
+class Eye extends Component {
+  constructor(){
+    super();
+    this.props = {};
+    this.makeMoving = this.makeMoving.bind(this);
+  }
+  render(){
+    return (<div ref={(eye)=>{this.makeMoving(eye)}} className={this.props.side ? 'eye '+this.props.side.trim() : 'eye'}/>)
+  }
+  makeMoving(eyeDiv,radius){
+    const computedStyle = window.getComputedStyle(eyeDiv,null);
+    var original = window.getComputedStyle(eyeDiv,null).getPropertyValue(this.props.side);
+    original = parseInt(original.substring(0,original.length-2));
+    console.log(this.props);
+    const gitdisplay = document.getElementById('gitdisplay');
+    const [x, y] = getPosition(eyeDiv);
+    if (gitdisplay) {
+      console.log('git',gitdisplay.offsetWidth, gitdisplay.offsetHeight);
+      gitdisplay.addEventListener('mousemove',(event)=>{
+        //console.log(event.clientX,event.clientY)
+        var mouseX = event.clientX - x;
+        var mouseY = event.clientY - y;
+        mouseX = Math.min(Math.max(mouseX,-this.props.radius),this.props.radius);
+        mouseY = Math.min(Math.max(mouseY,-this.props.radius),this.props.radius);
+        eyeDiv.style[this.props.side] = original + (this.props.side === 'left' ? mouseX : -mouseX) + 'px';
+        eyeDiv.style.top = 'calc(50% + '+mouseY+'px)';
+      });
+    }
   }
 }
 
