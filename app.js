@@ -55,11 +55,11 @@ class Eye extends React.Component {
     original = parseInt(original.substring(0,original.length-2));
     console.log(this.props);
     const gitdisplay = document.getElementById('gitdisplay');
-    const [x, y] = getPosition(eyeDiv);
     if (gitdisplay) {
       console.log('git',gitdisplay.offsetWidth, gitdisplay.offsetHeight);
       gitdisplay.addEventListener('mousemove',(event)=>{
         //console.log(event.clientX,event.clientY)
+        const [x, y] = getPosition(eyeDiv);
         var mouseX = event.clientX - x;
         var mouseY = event.clientY - y;
         mouseX = Math.min(Math.max(mouseX,-this.props.radius),this.props.radius);
