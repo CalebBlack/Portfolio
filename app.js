@@ -70,5 +70,8 @@ class Eye extends Component {
     }
   }
 }
-
+function getPosition(element) {
+    for (var x=0, y=0; element != null; x += element.offsetLeft, y += element.offsetTop, element = element.offsetParent);
+    return [x,y];
+}
 ReactDOM.render(<App />, document.getElementById('root'));
