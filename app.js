@@ -3,7 +3,7 @@ class App extends React.Component {
     return (
       <div id="app">
         <Background source='https://i.imgur.com/9eDEcN5.jpg'/>
-        <div className='display gitdisplay'>
+        <div id='gitdisplay' className='display gitdisplay'>
           <div className='eyes'><Eye radius={5} side='left'/><Eye radius={5} side='right'/></div>
           <a href='https://www.github.com/CalebBlack/'><img className='github' src='https://i.imgur.com/9HLZFMT.png'/></a>
         </div>
