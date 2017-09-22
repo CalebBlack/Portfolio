@@ -203,9 +203,11 @@ div.zspin:hover {
 }
 .eye.left {
   left: 40%;
+  transition: opacity 0.3s linear, left 1s ease, top 1s ease !important;
 }
 .eye.right {
   right: 40%;
+  transition: opacity 0.3s linear, right 1s ease, top 1s ease !important;
 }
 .gitdisplay:hover .eye {
   opacity: 1;
