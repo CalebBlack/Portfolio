@@ -48,7 +48,7 @@ class Eye extends React.Component {
         var mouseY = event.clientY - y;
         mouseX = Math.min(Math.max(mouseX,-this.props.radius),this.props.radius);
         mouseY = Math.min(Math.max(mouseY,-this.props.radius),this.props.radius);
-        eyeDiv.style[this.props.side] = original + (this.props.side === 'left' ? mouseX : -mouseX) + 'px';
+        eyeDiv.style[this.props.side] = 'calc(40% + '+ (this.props.side === 'left' ? mouseX : -mouseX) + 'px)';
         eyeDiv.style.top = 'calc(50% + '+mouseY+'px)';
       });
     }
