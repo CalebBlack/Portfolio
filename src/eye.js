@@ -27,9 +27,6 @@ class Eye extends React.Component {
     setInterval(blink,10000);
   }
   makeMoving(eyeDiv){
-    const computedStyle = window.getComputedStyle(eyeDiv,null);
-    var original = window.getComputedStyle(eyeDiv,null).getPropertyValue(this.props.side);
-    original = parseInt(original.substring(0,original.length-2));
     const gitdisplay = document.getElementById('gitdisplay');
     gitdisplay.addEventListener('mousemove',()=>{
       if (this.state.hovered !== true) {
