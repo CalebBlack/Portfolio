@@ -64,7 +64,7 @@ body, html {
 #app {
   text-shadow: 0 0 9px black;
   user-select: none;
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Lora', serif;
   text-align: center;
   color: #705588;
   z-index: 0;
